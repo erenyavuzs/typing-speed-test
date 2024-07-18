@@ -5,6 +5,7 @@ import random
 import difflib
 
 
+
 class MainWindow:
     def __init(self, root):
         self.text = ["Success is not final, failure is not fatal: It is the courage to continue that counts.",
@@ -35,4 +36,24 @@ class MainWindow:
 
         self.user_text = Text(root)
         self.user_text.grid(column=0, row=1, columnspan=3, sticky="nsew")
+
+        self.btn_start = Button(root, text="Start/Restart", command=self.start)
+        self.btn_start.grid(colmn=0, row=2, columnspan=1, sticky="nsew")
+        self.btn_stop = Button(root, text="Stop", command=self.stop)
+        self.btn_stop.grid(column=1, row=2, columnspan=1, sticky="nsew")
+        self.btn_newtext = Button(root, text="New Text", command=self.new_text)
+        self.btn_newtext.grid(column=2, row=2, columnspan=1, sticky="nsew")
+
+        self.label_speed = Label(
+            root, text=f"Your typing speed is {self.speed} WPM")
+        self.label_speed.grid(row=3, column=0, columnspan=3, sticky="nsew")
+
+        self.label_accuracy = Label(
+            root, text=f"Your typing accuracy is {self.speed} %")
+        self.label_accuracy.grid(row=4, column=0, columnspan= 3, sticky="nsew")
+
+        def start(self):
+            self.time_end = time.time()
+            
+
 
