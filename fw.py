@@ -3,7 +3,7 @@ from tkinter import ttk
 import time
 import random
 import difflib
-
+import os
 
 class MainWindow:
     def __init__(self, root):
@@ -67,6 +67,7 @@ class MainWindow:
         self.user_text.delete('1.0', END)
 
 def main():
+    os.environ['TK_SILENCE_DEPRECATION'] = '1'
     root = Tk()
     myapp = MainWindow(root)
     root.mainloop()
